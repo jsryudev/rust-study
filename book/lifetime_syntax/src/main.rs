@@ -2,6 +2,17 @@ struct ImportantExcerpt<'a> {
     part: &'a str,
 }
 
+impl<'a> ImportantExcerpt<'a> {
+    fn level(&self) -> i32 {
+        3
+    }
+
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please: {}", announcement);
+        self.part
+    }
+}
+
 fn main() {
     //let r;
 
@@ -40,6 +51,8 @@ fn main() {
     //    .expect("Could not find a '.'");
     //let i = ImportantExcerpt { part: first_sentence };
     
+    let s: &'static str = "I have a static lifetime.";
+
 }
 
 //fn longest(x: &str, y: &str) -> &str {
