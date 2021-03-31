@@ -1,6 +1,6 @@
 //pub fn add_two(a: i32) -> i32 {
-    //a + 2
-    //a + 3
+//    a + 2
+//    a + 3
 //}
 
 //pub fn greeting(name: &str) -> String {
@@ -35,6 +35,14 @@
 //pub fn add_two(a: i32) -> i32 {
 //    a + 2
 //}
+
+pub fn add_two(a: i32) -> i32 {
+    internal_adder(a, 2)
+}
+
+fn internal_adder(a: i32, b: i32) -> i32 {
+    a + b
+}
 
 #[cfg(test)]
 mod tests {
@@ -108,15 +116,20 @@ mod tests {
     //    assert_eq!(102, add_two(100));
     //}
 
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+    //#[test]
+    //fn it_works() {
+    //    assert_eq!(2 + 2, 4);
+    //}
+
+    //#[test]
+    //#[ignore]
+    //fn expensive_test() {
+    //    // code that takes an hour to run
+    //}
 
     #[test]
-    #[ignore]
-    fn expensive_test() {
-        // code that takes an hour to run
+    fn internal() {
+        assert_eq!(4, internal_adder(2, 2));
     }
 }
 
